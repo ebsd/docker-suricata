@@ -3,16 +3,11 @@ version: "3"
 services:
   suricata:
     container_name: suricata
-    image: pihole/pihole:latest
+    #image: pihole/pihole:latest
     network_mode: host
-    # en mode net=host, on désactive les ports
-    #ports:
-    #  - "53:53/tcp"
-    #  - "53:53/udp"
-    #  - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
-    #  - "80:80/tcp"
     environment:
-      
+     CONFIG="-i wlan0"   
     cap_add:
-      - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
+      - NET_ADMIN
+      - SYS_NICE
     restart: unless-stopped
