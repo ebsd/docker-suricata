@@ -1,0 +1,15 @@
+version: "1.0"
+services:
+
+  suricata:
+    image: ../suricata:latest 
+    environment:
+      - CONFIG=-i wlan0
+    #privileged: true
+    volumes:
+      - ./logs:/var/log/suricata
+    restart: unless-stopped
+    network_mode: "host"
+    cap_add:
+      - net_admin
+      - sys_nice
