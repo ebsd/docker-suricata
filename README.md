@@ -63,4 +63,5 @@ And then check fast.log and / or eve.json file :
 
 ```
 defender@dockerhost:~/docker-suricata/docker-compose/logs $ tail -f fast.log
+defender@dockerhost:~/docker-suricata/docker-compose/logs $ grep \"event_type\":\"alert\" eve.json
 ```
