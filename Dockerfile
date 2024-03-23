@@ -6,7 +6,9 @@ RUN apk -U upgrade
 RUN apk add suricata --no-cache
 # Install Suricata-update utility https://github.com/OISF/suricata-update
 RUN apk add python3 py3-pip
-RUN pip install suricata-update
+#RUN python3 -m venv /python3/suricata-venv
+#RUN . /python3/suricata-venv/bin/activate
+RUN python3 -m pip install suricata-update  --break-system-packages
 COPY suricata-update.sh /etc/suricata/suricata-update.sh
 # COPY file needed for the Suricata efficiency
 COPY suricata-update-cron /etc/crontabs/suricata-update-cron

@@ -1,15 +1,17 @@
-version: "1.0"
-services:
+version: "3"
 
+services:
   suricata:
-    image: ../suricata:latest 
+    container_name: suricata
+    image: suricata:v5
+    network_mode: host
     environment:
-      - CONFIG=-i wlan0
-    #privileged: true
-    volumes:
-      - ./logs:/var/log/suricata
-    restart: unless-stopped
-    network_mode: "host"
+      CONFIG: '-i eth0'  
     cap_add:
-      - net_admin
-      - sys_nice
+      - NET_ADMIN
+      - SYS_NICE
+    restart: unless-stopped
+    volumes:
+      - './logs:/var/log/suricata'
+
+
