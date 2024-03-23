@@ -6,7 +6,7 @@ services:
     image: suricata:v5
     network_mode: host
     environment:
-      CONFIG: '-i eth0'  
+      CONFIG: '-i eth1'  
     cap_add:
       - NET_ADMIN
       - SYS_NICE

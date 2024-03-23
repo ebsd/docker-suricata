@@ -25,6 +25,8 @@ $ sudo docker run -d \
 
 ## Or run with docker-compose
 
+Configure interface on which suricata will listen to (same name as docker host).
+
 ```
 $ sudo docker-compose up -d
 ```
@@ -47,4 +49,18 @@ services:
     volumes:
       - './logs:/var/log/suricata'
 
+```
+
+## Tester l'IDS
+
+From a lan machine :
+
+```
+$ curl http://testmynids.org/uid/index.html
+```
+
+And then check fast.log file :
+
+```
+defender@dockerhost:~/docker-suricata/docker-compose/logs $ tail -f fast.log
 ```
