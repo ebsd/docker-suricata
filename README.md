@@ -1,10 +1,15 @@
 ## Build image
 
+First, build image locally.
+
 ```
 $ sudo docker build -t suricata:v5 .
 ```
 
 ## Run container
+
+Then run a container.
+
 ```
 $ sudo docker run -it --rm \
 -v $(pwd)/logs:/var/log/suricata \
@@ -24,7 +29,7 @@ $ sudo docker run -d \
 $ sudo docker-compose up -d
 ```
 
-docker-compose.yaml
+docker-compose.yml
 ```
 version: "3"
 
