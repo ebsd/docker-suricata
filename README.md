@@ -59,7 +59,7 @@ From a lan machine :
 $ curl http://testmynids.org/uid/index.html
 ```
 
-And then check fast.log file :
+And then check fast.log and / or eve.json file :
 
 ```
 defender@dockerhost:~/docker-suricata/docker-compose/logs $ tail -f fast.log
