@@ -31,7 +31,7 @@ Configure interface on which suricata will listen to (same name as docker host).
 $ sudo docker-compose up -d
 ```
 
-docker-compose.yml
+docker-compose.yml, configure listening interfaces : -i eth1 -i ethn
 ```
 version: "3"
 
